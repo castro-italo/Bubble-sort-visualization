@@ -1,6 +1,3 @@
-from   sort   import   *
-
-
 import pygame
 import time
 import random
@@ -9,11 +6,11 @@ import os
 
 
 
-HEIGHT, WIDTH = 800, 600                                # Dimensões da tela
-RUNNING       = True                                    # Variável auxiiar que mantem a janela aberta
-ICON          = pygame.image.load('assets/sort.png')    # Ícone da jenala
+HEIGHT, WIDTH = 800, 600                                # Screen size
+RUNNING       = True                                    # Aux variable that keep widnow open
+ICON          = pygame.image.load('assets/sort.png')    # Window size
 
-# Criando lista para ser ordenada
+# Creating a list with random numbers
 lista = list()
 
 for _ in range(25):
@@ -23,33 +20,32 @@ for _ in range(25):
 
 print(lista)
 
-# Inicializa o pygame
+# start pygame
 pygame.init()
 
-# Criando a jenale do nosso jogo
+# Creating a winfow for our game
 screen = pygame.display.set_mode((HEIGHT, WIDTH))
 
-#  Set title and icon
+# Set an icon and title to screen
 pygame.display.set_caption("Bubble sort visualization")
 pygame.display.set_icon(ICON)
 
-# Mantendo a tela aberta
+# Keep window open
 while True:
-	# Pegando todos os eventos do nosso jogo
+	# Taking game events
 	for event in pygame.event.get():
-		# Verifica se o botão de fechar foi clicado, se sim fecha a janela do jogo
+		# Quit the game if 'X' was clicked
 		if(event.type == pygame.QUIT):
 			pygame.quit()
 			exit()
 			RUNNING = False
 
-	# Mudando a cor de fundo da tela
+	# Chenging background color
 	screen.fill((0, 0, 0))
 
-	dist = 0
+	dist = 0 
 
-	# LIMPA TELA | 
-
+	# bubble sort function
 	def bubble_sort(array, dist, width):
 		length = len(array)
 		dist1 = 0
@@ -83,5 +79,5 @@ while True:
 	print(lista)
 	os.system("pause")
 
-	# Precisamos atualizar cada frame da tela
+	# Update each frame 
 	pygame.display.update()
