@@ -77,7 +77,8 @@ while True:
 		time.sleep(0.1)
 		pygame.display.update()
 	print(lista)
-	os.system("pause")
+	
 
 	# Update each frame 
 	pygame.display.update()
+	pygame.quit()
